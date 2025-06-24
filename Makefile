@@ -9,7 +9,7 @@ LDFLAGS = -L/usr/local/lib \
 
 SOURCES = \
 	main.cpp \
-	game.cpp \
+	game/pong.cpp \
 	physics/physics.cpp \
 	input/input_manager.cpp \
 	debugger/debugger.cpp \

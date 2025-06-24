@@ -16,15 +16,19 @@ struct PhysicsBodyComponent {
     b2Body* body = nullptr;
 };
 
-struct CircleComponent {
-    sf::CircleShape circle;
+struct RenderComponent {
+    std::shared_ptr<sf::Shape> shape;
 };
 
-extern std::unordered_map<Entity, CircleComponent> circleComponents;
+struct aiComponent {
+    float trackingSpeed;
+};
+
+extern std::unordered_map<Entity, RenderComponent> renderComponents;
 extern std::unordered_map<Entity, PhysicsBodyComponent> physicsBodies;
+extern std::unordered_map<Entity, aiComponent> aiComponents;
 
 
-void updateMovement(float deltaTime);
+
 void renderSystem(sf::RenderWindow& window);
-void collisionSystem();
-void boundsSystem(float windowWidth, float windowHeight);
+void aiSystem(Entity trackingObj);
